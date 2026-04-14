@@ -10,7 +10,6 @@ This guide provides step-by-step instructions to set up and run both the Backend
 Create an RDS database instance before proceeding with backend setup.
 
 
-
 ### 1. Install Dependencies
 ```bash
 sudo yum install git -y
@@ -68,6 +67,9 @@ Replace `<BACKEND_PUBLIC_IP>` with the public IP address of your backend server.
 
 ### 4. Install Python Dependencies
 ```bash
+
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
