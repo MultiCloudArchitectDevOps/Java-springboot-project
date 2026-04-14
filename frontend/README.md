@@ -40,9 +40,21 @@ cd target
 
 ### 7. Run JAR File
 ```bash
-nohup java -jar datastore-0.0.7.jar > ~/datastore-nohup.out 2>&1 &
+nohup java -jar datastore-0.0.7.jar > ~/datastore-nohup.out 2>&1 &  #if hard coded db crend
+          or
+nohup env \
+  MYSQL_HOST=database-1.cxeakuo04ry1.us-east-1.rds.amazonaws.com \
+  MYSQL_PORT=3306 \
+  MYSQL_USERNAME=admin \
+  MYSQL_PASSWORD=YOUR_PASSWORD_HERE \
+  LOG_FILE_PATH=$LOG_DIR/datastore.log \
+  java -jar target/datastore-0.0.7.jar \
+  --server.port=8084 \
+  > $LOG_DIR/nohup.out 2>&1 &
 ```
 The backend application will now run on port **8084** (default configuration).
+ps -ef | grep java #check process 
+
 
 ---
 
