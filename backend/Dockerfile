@@ -1,3 +1,4 @@
+#Multi Stage
 # Stage 1 — Build JAR
 FROM maven:3.9.9-amazoncorretto-11 AS builder
 WORKDIR /app
